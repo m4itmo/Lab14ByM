@@ -137,7 +137,7 @@ int main(int argc, char *argv[]) {
     getBMPHeaderData(inputFile, &bmpHeader);
     int **gameMap = initImage(bmpHeader, inputFile);
 
-    for (int iteration = 1; iteration <= config.maxIter; ++iteration) {
+    for (int iteration = 0; iteration <= config.maxIter; ++iteration) {
         saveNewSate(iteration, gameMap, bmpHeader, &config);
         runIteration(gameMap, bmpHeader.height, bmpHeader.width);
     }
